@@ -7,6 +7,7 @@ import { RxLoop } from "react-icons/rx";
 import { MdFormatListBulleted } from "react-icons/md";
 import { HiPause } from "react-icons/hi2";
 import { useState } from "react";
+import { RxCross2 } from "react-icons/rx";
 
 const musicList = () => (
   <div className=" border-t mt-1 rounded-lg p-1 flex gap-2">
@@ -36,17 +37,15 @@ const App = () => {
 
   return (
     <div
-      className={`border-white bg-white rounded-2xl md:rounded-none w-[360px] h-[720px] overflow-hidden md:w-[100%] md:min-w-[100vw] md:h-[100%] md:min-h-screen p-[1.1rem] relative ${
+      className={`bg-white  w-[100vw h-[100vh] overflow-hidden sm:flex sm:items-center sm:justify-center p-[1.1rem] relative ${
         isModelOpen ? "open-model" : "closed-model"
       }`}
     >
-      {/* <img
-        className="absolute object-cover rounded-2xl md:rounded-none blur-md backdrop-blur-md top-0 left-0 h-[100%] w-[100%] z-[-1]"
-        src="https://i.postimg.cc/FR7mD4Lf/Adobe-Stock-194945297-Preview.jpg"
-        alt=""
-      /> */}
-      <div className="w-[100%] z-[1000] mt-3">
-        <div className="search flex items-center justify-center border border-gray-100 p-[.5rem] px-[1rem]  rounded-[20px] shadow-md">
+      <div className="hidden  sm:flex sm:p-3 rounded-lg h-[100px]  items-center justify-center border border-gray-50 shadow-md gap-2 w-[270px] sm:bg-white">
+        <RxCross2 className="text-red-500" /> Only mobile-compatible.
+      </div>
+      <div className="w-[100%] mt-3 h-[98%] flex items-center justify-evenly pb-6 flex-col sm:hidden ">
+        <div className="search flex items-center justify-center border border-gray-100 p-[.5rem] px-[1rem] w-full rounded-[20px] shadow-md">
           <input
             type="text"
             placeholder="Search latest music..."
@@ -55,7 +54,7 @@ const App = () => {
           <CiSearch size={20} className="w-[10%]" />
         </div>
 
-        <div className="mt-12 w-[100%] h-[300px]  rounded-xl overflow-hidden">
+        <div className="mt-8 w-[100%] h-[320px]  rounded-xl overflow-hidden">
           <img
             className="w-[100%] h-full object-cover"
             src="https://i.postimg.cc/FR7mD4Lf/Adobe-Stock-194945297-Preview.jpg"
@@ -63,7 +62,7 @@ const App = () => {
           />
         </div>
 
-        <div className="titlebox mt-10 flex items-start flex-col justify-center">
+        <div className="titlebox w-[98%] mt-8 flex items-start flex-col justify-center">
           <div className=" flex items-center w-[98%] justify-between">
             <p className=" max-w-[80%] font-medium h-[26px] overflow-hidden">
               {" "}
@@ -74,7 +73,7 @@ const App = () => {
           <p className=" text-[12px]">Singer: Arijit Singh</p>
         </div>
 
-        <div className="mt-10 flex items-start flex-col justify-center">
+        <div className="mt-8 w-[98%] flex items-start flex-col justify-center">
           <input className="rounded-lg  h-1 w-[98%]" type="range" />
           <div className=" flex w-[100%] mt-1 items-center justify-between">
             <p className="starttime text-[13px]">0:0</p>
