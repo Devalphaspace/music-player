@@ -81,14 +81,14 @@ const App = () => {
 
   const nextSongHandler = () => {
     setCurrentTrackIndex((prevIndex) => (prevIndex + 1) % playlist.length);
-    setIsPlaying(!isPlaying);
+    setIsPlaying(false);
   };
 
   const prevSongHandler = () => {
     setCurrentTrackIndex(
       (prevIndex) => (prevIndex - 1 + playlist.length) % playlist.length
     );
-    setIsPlaying(!isPlaying);
+    setIsPlaying(false);
   };
 
   const selectTrackHandler = (index) => {
@@ -97,7 +97,6 @@ const App = () => {
   };
 
   const handleAudioEnded = () => {
-    // Automatically play the next song when the current one ends
     nextSongHandler();
     setIsPlaying(!isPlaying);
   };
@@ -127,7 +126,6 @@ const App = () => {
     setIsLikes(!isLiked);
   };
 
-  // console.log(playlist[0].track?.album?.images[0]?.url);
 
   return (
     <div
